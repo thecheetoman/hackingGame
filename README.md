@@ -6,7 +6,7 @@ Not well commented, not recommended for new people to parse through the code, le
 Not playable, many features need to be implemented, see checklist for next steps. Game loop is yet to be implemented
 
 ## Roadmap
-### Uses a "dependancy" = D   Uses no dependancy = N    Game system = F
+### Uses a "dependancy" = D   Uses no dependancy = N    Game system = G
  - [x] **G** Make interactable terminal
  - [x] **G** Basic commands: Shutdown
  - [x] **D** Ability to install the hackingtools "library"(Not a real library, this game is entirely fictional)
