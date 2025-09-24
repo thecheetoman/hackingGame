@@ -15,4 +15,3 @@ Not playable, many features need to be implemented, see checklist for next steps
  - [ ] **D** Hack, Weakening, and trick the company to add information to server
  - [ ] **D** Send info from server to your "home" host
  - [ ] **N** Sell the data
- - [ ] 
