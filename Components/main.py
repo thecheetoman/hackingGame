@@ -2,18 +2,30 @@ from Assets.Scripts.info import *
 import sys, time, os
 
 connectedServer = "home"
-
+hackingToolsInstalled = False
 print("haking game")
 print(ver)
 while True:
     error = True
     userInput = input(connectedServer + "/> ")
-    #install hackingTools
-    if userInput.startswith("hackingTools --install"):
-        error = False
-        hackingToolsInstalled = True
-        import Assets.Scripts.OutputLogs.hackingToolsOutput
-    
+    #Install hackingTools
+    if userInput.startswith("hackingTools"):
+        if hackingToolsInstalled == False:
+            #Installation functionality
+            if "--install" in userInput:
+                error = False
+                import Assets.Scripts.OutputLogs.hackingToolsOutput
+                hackingToolsInstalled = True
+                error = False
+            #What to do if hackingTools is not installed
+            else:
+                print("Package 'hackingTools' is not installed")
+                error = False
+        ##Write commands that use hackingTools here
+        if hackingToolsInstalled == True:
+            print("guh")
+
+    #Look for "victim" servers =D
     if userInput.startswith("servers --tree"):
         error = False
         if connectedServer == "home":
@@ -26,7 +38,7 @@ while True:
         time.sleep(1.5)
         sys.exit()
     
-    #clear output functionality
+    #Clear terminal functionality that works on linux and windows
     if userInput.startswith("clear"):
         error = False
         if (OsType == "Windows"):
