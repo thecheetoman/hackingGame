@@ -7,7 +7,7 @@ print("haking game")
 print(ver)
 while True:
     error = True
-    userInput = input("\033[1m>\033[0m ")
+    userInput = input(connectedServer + "/> ")
     #install hackingTools
     if userInput.startswith("hackingTools --install"):
         error = False
@@ -17,7 +17,7 @@ while True:
     if userInput.startswith("servers --tree"):
         error = False
         if connectedServer == "home":
-            print("hi")
+            import Assets.ServerInfo.homeServerTree
 
     #Close game functionality
     if userInput.startswith("shutdown"):
