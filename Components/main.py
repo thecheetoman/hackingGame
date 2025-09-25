@@ -29,7 +29,10 @@ while True:
     #clear output functionality
     if userInput.startswith("clear"):
         error = False
-        os.system('cls')
+        if (OsType == "Windows"):
+            os.system('cls')
+        if (OsType == "Linux"):
+            os.system('clear')
 
     #Leave a blank space above this comment for ease of adding commands
     if error == True:
