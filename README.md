@@ -10,7 +10,7 @@ Not playable, many features need to be implemented, see checklist for next steps
  - [x] **G** Make interactable terminal
  - [x] **G** Basic commands: Shutdown
  - [x] **D** Ability to install the hackingtools "library"(Not a real library, this game is entirely fictional)
- - [ ] **N** List servers
+ - [x] **N** List servers
  - [ ] **D** Connect and gain accesss to a victim server
  - [ ] **D** Hack, Weakening, and trick the company to add information to server
  - [ ] **D** Send info from server to your "home" host

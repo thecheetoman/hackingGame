@@ -1,9 +1,12 @@
 from Assets.Scripts.info import *
 import sys, time, os
 
+#Servers in each part
+homeAvailableServers = ["testServer01", "Elmore Packard", "freeMonE"]
+
 connectedServer = "home"
 hackingToolsInstalled = False
-print("haking game")
+print(gameName)
 print(ver)
 while True:
     error = True
@@ -23,10 +26,17 @@ while True:
                 error = False
         ##Write commands that use hackingTools here
         if hackingToolsInstalled == True:
-            print("guh")
+            if "--connect" in userInput:
+                serverToConnect = userInput.replace("hackingTools --connect ", "", 1)
+                if serverToConnect in homeAvailableServers:
+                    print("yes")
+                    error = False
+                else:
+                    print("No")
+                    error = False
 
     #Look for "victim" servers =D
-    if userInput.startswith("servers --tree"):
+    if userInput.startswith("nmap -a"):
         error = False
         if connectedServer == "home":
             import Assets.ServerInfo.homeServerTree
