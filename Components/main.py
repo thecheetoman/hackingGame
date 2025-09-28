@@ -1,4 +1,5 @@
 from Assets.Scripts.info import *
+from Assets.Scripts.OutputLogs.connectToServer import connectToServer
 import sys, time, os
 
 #Servers in each part
@@ -24,15 +25,17 @@ while True:
             else:
                 print("Package 'hackingTools' is not installed")
                 error = False
+        
         ##Write commands that use hackingTools here
         if hackingToolsInstalled == True:
             if "--connect" in userInput:
                 serverToConnect = userInput.replace("hackingTools --connect ", "", 1)
                 if serverToConnect in homeAvailableServers:
-                    print("yes")
+                    connectToServer(serverToConnect)
+                    connectedServer = serverToConnect
                     error = False
                 else:
-                    print("No")
+                    print("Server not found")
                     error = False
 
     #Look for "victim" servers =D
