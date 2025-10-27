@@ -1,9 +1,11 @@
 from Assets.Scripts.info import *
 from Assets.Scripts.OutputLogs.connectToServer import connectToServer
+from Assets.ServerInfo.homeServerTree import *
+from Assets.funcs import *
 import sys, time, os
 
 #Servers in each part
-homeAvailableServers = ["testServer01", "Elmore Packard", "freeMonE"]
+homeAvailableServers = ["testServer01", "Gigmore electronics", "freeMonE"]
 
 connectedServer = "home"
 hackingToolsInstalled = False
@@ -12,6 +14,10 @@ print(ver)
 while True:
     error = True
     userInput = input(connectedServer + "/> ")
+    #Commented out since these lines are for testing purposes
+    #if (connectedServer == "home"):
+        #print("guh")
+    
     #Install hackingTools
     if userInput.startswith("hackingTools"):
         if hackingToolsInstalled == False:
@@ -35,14 +41,14 @@ while True:
                     connectedServer = serverToConnect
                     error = False
                 else:
-                    print("Server not found")
+                    print("Server \n" + serverToConnect + "\' not found")
                     error = False
 
     #Look for "victim" servers =D
-    if userInput.startswith("nmap -a"):
+    if userInput.startswith("nmap"):
         error = False
         if connectedServer == "home":
-            import Assets.ServerInfo.homeServerTree
+            homeTree()
 
     #Close game functionality
     if userInput.startswith("shutdown"):
@@ -54,11 +60,9 @@ while True:
     #Clear terminal functionality that works on linux and windows
     if userInput.startswith("clear"):
         error = False
-        if (OsType == "Windows"):
-            os.system('cls')
-        if (OsType == "Linux"):
-            os.system('clear')
+        clearConsole()
+        
 
     #Leave a blank space above this comment for ease of adding commands
     if error == True:
-        print("Terminal: Command unrecognized")
+        print("\'" + userInput + "\' is not recognized as a operable command.")

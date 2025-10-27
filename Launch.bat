@@ -2,5 +2,5 @@
 cls
 cd Components
 cls
-echo Launching cheeto script V2
+echo Launching
 python3 main.py
