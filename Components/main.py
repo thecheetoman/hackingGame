@@ -2,6 +2,7 @@ from Assets.Scripts.info import *
 from Assets.Scripts.OutputLogs.connectToServer import connectToServer
 from Assets.ServerInfo.homeServerTree import *
 from Assets.funcs import *
+from Assets.ServerInfo.ServerClass import *
 import sys, time, os
 
 #Servers in each part
@@ -43,7 +44,7 @@ while True:
                         error = False
 
         #Look for "victim" servers =D
-        if userInput.startswith("nmap"):
+        if userInput.startswith("scan"):
             error = False
             if connectedServer == "home":
                 homeTree()
@@ -60,11 +61,18 @@ while True:
             error = False
             clearConsole()
     elif (connectedServer in homeAvailableServers):
+        if (connectedServer == "testServer01"):
+            #put commands that use hackingTools here
+            if userInput.startswith("hackingTools"):
+                print("ben?")
         if userInput.startswith("shutdown"):
             error = False
             print("Disconnecting from " + gameName)
             time.sleep(0.5)
             sys.exit()
+        if userInput.startswith("clear"):
+            error = False
+            clearConsole()
 
     #Leave a blank space above this comment for ease of adding commands
     if error == True:
