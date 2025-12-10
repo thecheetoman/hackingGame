@@ -64,7 +64,7 @@ while True:
         if (connectedServer == "testServer01"):
             #put commands that use hackingTools here
             if userInput.startswith("hackingTools"):
-                print("ben?")
+                print(testServer01.Info())
         if userInput.startswith("shutdown"):
             error = False
             print("Disconnecting from " + gameName)
