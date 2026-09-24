@@ -22,10 +22,15 @@ while True:
             if hackingToolsInstalled == False:
                 #Installation functionality
                 if "--install" in userInput:
-                    error = False
-                    import Assets.Scripts.OutputLogs.hackingToolsOutput
-                    hackingToolsInstalled = True
-                    error = False
+                    if "--instant" in userInput:
+                        print("ig bro")
+                        error = False
+                        hackingToolsInstalled = True
+                    else:
+                        error = False
+                        import Assets.Scripts.OutputLogs.hackingToolsOutput
+                        hackingToolsInstalled = True
+                        error = False
                 #What to do if hackingTools is not installed
                 else:
                     print("Package 'hackingTools' is not installed")
@@ -42,6 +47,13 @@ while True:
                     else:
                         print("Server \n" + serverToConnect + "\' not found")
                         error = False
+                if "--payload(" in userInput:
+                    testvar = userInput.replace("hackingTools --connect", "", 1)
+                    testvar = testvar.replace("--payload(", "", 1)
+                    testvar = testvar.replace(")", "", 1)
+                    print(testvar)
+                    error = False
+
 
         #Look for "victim" servers =D
         if userInput.startswith("scan"):
